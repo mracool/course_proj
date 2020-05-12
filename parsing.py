@@ -31,18 +31,19 @@ for i in range(len(data_to_ml)):
     elif data_to_ml['Winner'][i] == 'Blue':
         Type_new[i] = 0
 
-
-Type_new = pd.Series([], dtype='object')
-data_to_ml.reset_index(inplace=True)
-for i in range(len(data_to_ml)):
-    if data_to_ml['Winner'][i] == 'Red':
-        Type_new[i] = 1
-    elif data_to_ml['Winner'][i] == 'Blue':
-        Type_new[i] = 0
+data_to_ml.insert(155, 'Type New', Type_new)
+Type_new_ts = pd.Series([], dtype='object')
+data_to_test.reset_index(inplace=True)
+for i in range(len(data_to_test)):
+    if data_to_test['Winner'][i] == 'Red':
+        Type_new_ts[i] = 1
+    elif data_to_test['Winner'][i] == 'Blue':
+        Type_new_ts[i] = 0
 
 
 #   inserting new column with values of list made above
-data_to_ml.insert(155, 'Type New', Type_new)
+data_to_test.insert(0, 'Type New', Type_new_ts)
+
 data_to_test.pop('Winner')
 
 #data_to_ml.pop('Winner')
