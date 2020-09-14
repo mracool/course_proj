@@ -20,7 +20,7 @@ for i in column_names:
     Y = data['Type New']
     X = (data[i])
     data_crosstab = pd.crosstab(X, Y, margins=False)
-    rezults= chi2_contingency(data_crosstab)
+    rezults= chi2_contingency(data_crosstab) # вот тут мне кажется метод мутный
     if rezults[1] > alpha:
         columns_to_ml.append(i)
     p_values.append(rezults[1])

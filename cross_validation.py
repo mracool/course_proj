@@ -89,6 +89,8 @@ training = pandas_to_spark(X)
 print("What i've got:")
 pprint(training)
 
+#nтут что-то не то
+
 crossval = CrossValidator(estimator=logreg, estimatorParamMaps=[], evaluator=BinaryClassificationEvaluator)
 cvModel = crossval.fit(training)
 # from pyspark.ml import Pipeline
