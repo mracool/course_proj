@@ -18,7 +18,7 @@ X_women = ps.data_to_test[column_names]
 temp = 0
 columns_with_valid_par = []
 columns_with_valid_par.append(column_names[0])
-
+# lll
 
 for i in range(1, len(column_names)):
     print(i)
