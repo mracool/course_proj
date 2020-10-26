@@ -31,11 +31,9 @@ logreg.fit(preprocessing.scale(X_men), Y_men)
 y_pred = np.ndarray.tolist(logreg.predict(preprocessing.scale(X_women)))
 
 y_test = Y_women.tolist()
-print(y_test)
 #  calculating error
 error = 0
 len_y_pred = len(y_pred)
 for i in range(len_y_pred):
     if (y_pred[i] - y_test[i]) != 0:
         error = error + 1
-print(error/len_y_pred)

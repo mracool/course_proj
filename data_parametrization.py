@@ -38,7 +38,7 @@ for i in range(1, len(column_names)):
             error.append(1)
         else:
             error.append(0)
-    if len(general_error) !=0 and general_error[-1] >= sum(error):
+    if len(general_error) != 0 and general_error[-1] >= sum(error):
         columns_with_valid_par.append(column_names[i])
     general_error.append(sum(error))
 print(y_pred)
