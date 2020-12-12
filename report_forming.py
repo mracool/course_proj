@@ -1,4 +1,4 @@
-#формируется отчет о типах данных
+#  forming data types info into report
 
 from pathlib import Path
 from analyse import data_dict

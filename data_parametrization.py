@@ -19,7 +19,7 @@ temp = 0
 columns_with_valid_par = []
 columns_with_valid_par.append(column_names[0])
 # lll
-
+# that what Simushkin said and i got wrong(
 for i in range(1, len(column_names)):
     print(i)
     print(len(columns_with_valid_par))
@@ -31,6 +31,7 @@ for i in range(1, len(column_names)):
     #  try model on test sample
     y_pred = np.ndarray.tolist(logreg.predict(preprocessing.scale(X_men[columns_with_valid_par])))
     y_test = lg.Y_men.tolist()
+
     del columns_with_valid_par[-1]
     #  calculating error
     for j in range(len(y_test)):

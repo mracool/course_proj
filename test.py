@@ -1,3 +1,5 @@
+# there are realised chi2 test, it didn't work good enough
+
 import pandas as pd
 from scipy.stats import chi2_contingency
 import parsing as ps
@@ -5,14 +7,12 @@ import hists as hs
 
 
 alpha = 0.1
-
-
 column_names = hs.column_names
 data_to_ml = hs.data_to_ml
 # creation example of data to work with
 data = ps.data_to_ml
 Y = data['Type New']
-X = data['B_avg_BODY_att']
+X = data[column_names]
 p_values = []
 columns_to_ml = []
 f = open("parametrs_to_ml.txt", "w+")
@@ -25,6 +25,3 @@ for i in column_names:
         columns_to_ml.append(i)
     p_values.append(rezults[1])
     f.write(i+':'+str(rezults))
-print(p_values)
-print(len(columns_to_ml))
-print(len(column_names))
